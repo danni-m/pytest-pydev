@@ -14,7 +14,7 @@ setup(
     author_email='basti AT redtoad DOT de',
     license='MIT License',
     description='py.test plugin to connect to a remote debug server with PyDev or PyCharm.',
-    long_description=read('README'),
+    long_description=read('README.rst'),
     url='http://bitbucket.org/basti/pytest-pydev/',
     download_url='http://bitbucket.org/basti/pytest-pydev/downloads/',
 
