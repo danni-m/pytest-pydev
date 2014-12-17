@@ -6,7 +6,7 @@
 import os.path
 import sys
 
-__version__ = '0.1'
+__version__ = '0.1.1'
 
 def pytest_addoption(parser):
     group = parser.getgroup('pydevd', 'Python remote debug server')
@@ -35,7 +35,11 @@ def pytest_configure(config):
         stdout = redirect in ('both', 'stdout')
         stderr = redirect in ('both', 'stderr')
 
-        from pydev import pydevd
+        try:
+            from pydev import pydevd
+        except ImportError:
+            # Newer pycharm-debug.egg
+            import pydevd
 
         # salvaged from pydev's source:
         # - host: the user may specify another host, if the debug server is not
